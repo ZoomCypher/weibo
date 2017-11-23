@@ -1,0 +1,568 @@
+2017-11-23 22:03:04 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:03:04 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 0.5, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:03:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:03:04 [sinaSpider] INFO: Reading start URLs from redis key 'weibo_spider:start_urls' (batch size: 32, encoding: utf-8
+2017-11-23 22:03:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:03:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:03:05 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:03:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline']
+2017-11-23 22:03:05 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:03:05 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:03:05 [scrapy.core.engine] ERROR: Scraper close failure
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 79, in crawl
+    yield self.engine.open_spider(self.spider, start_requests)
+redis.exceptions.ResponseError: WRONGTYPE Operation against a key holding the wrong kind of value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 311, in <lambda>
+    dfd.addBoth(lambda _: self.scraper.close_spider(spider))
+  File "C:\python3\lib\site-packages\scrapy\core\scraper.py", line 86, in close_spider
+    slot.closing = defer.Deferred()
+AttributeError: 'NoneType' object has no attribute 'closing'
+2017-11-23 22:03:05 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 3, 5, 461988),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1}
+2017-11-23 22:03:05 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:03:05 [twisted] CRITICAL: Unhandled error in Deferred:
+2017-11-23 22:03:05 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\twisted\internet\defer.py", line 1386, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 79, in crawl
+    yield self.engine.open_spider(self.spider, start_requests)
+redis.exceptions.ResponseError: WRONGTYPE Operation against a key holding the wrong kind of value
+2017-11-23 22:05:33 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:05:33 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:05:33 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:05:33 [sinaSpider] INFO: Reading start URLs from redis key 'weibo_spider:start_urls' (batch size: 32, encoding: utf-8
+2017-11-23 22:05:34 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:05:34 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:05:34 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:05:34 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:05:34 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:05:34 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:05:34 [scrapy.core.engine] ERROR: Scraper close failure
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 79, in crawl
+    yield self.engine.open_spider(self.spider, start_requests)
+redis.exceptions.ResponseError: WRONGTYPE Operation against a key holding the wrong kind of value
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 311, in <lambda>
+    dfd.addBoth(lambda _: self.scraper.close_spider(spider))
+  File "C:\python3\lib\site-packages\scrapy\core\scraper.py", line 86, in close_spider
+    slot.closing = defer.Deferred()
+AttributeError: 'NoneType' object has no attribute 'closing'
+2017-11-23 22:05:34 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 5, 34, 408461),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'log_count/WARNING': 1}
+2017-11-23 22:05:34 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:05:34 [twisted] CRITICAL: Unhandled error in Deferred:
+2017-11-23 22:05:34 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\twisted\internet\defer.py", line 1386, in _inlineCallbacks
+    result = g.send(result)
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 79, in crawl
+    yield self.engine.open_spider(self.spider, start_requests)
+redis.exceptions.ResponseError: WRONGTYPE Operation against a key holding the wrong kind of value
+2017-11-23 22:06:05 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:06:05 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:06:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:06:05 [sinaSpider] INFO: Reading start URLs from redis key 'weibo_spider:start_urls' (batch size: 32, encoding: utf-8
+2017-11-23 22:06:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:06:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:06:05 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:06:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:06:05 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:06:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-23 22:06:10 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-23 22:06:10 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:06:10 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-23 22:25:25 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:25:25 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'sina.scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:25:25 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:25:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:25:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:25:26 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:25:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:25:26 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:25:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-23 22:25:26 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 123, in pop
+    if "/follow" in url or "/fans" in url:
+builtins.TypeError: a bytes-like object is required, not 'str'
+
+2017-11-23 22:25:31 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 123, in pop
+    if "/follow" in url or "/fans" in url:
+builtins.TypeError: a bytes-like object is required, not 'str'
+
+2017-11-23 22:25:36 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 123, in pop
+    if "/follow" in url or "/fans" in url:
+builtins.TypeError: a bytes-like object is required, not 'str'
+
+2017-11-23 22:25:40 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-23 22:25:40 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:25:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 25, 40, 281819),
+ 'log_count/CRITICAL': 3,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'start_time': datetime.datetime(2017, 11, 23, 14, 25, 26, 765029)}
+2017-11-23 22:25:40 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:25:40 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-23 22:26:38 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:26:38 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'sina.scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:26:38 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:26:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:26:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:26:38 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:26:38 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:26:38 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:26:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-23 22:26:38 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 120, in pop
+    url.decode('utf-8')
+builtins.UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+
+2017-11-23 22:26:43 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 120, in pop
+    url.decode('utf-8')
+builtins.UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+
+2017-11-23 22:26:44 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-23 22:26:44 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:26:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 26, 44, 877402),
+ 'log_count/CRITICAL': 2,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'start_time': datetime.datetime(2017, 11, 23, 14, 26, 38, 870685)}
+2017-11-23 22:26:44 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:26:45 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-23 22:35:08 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:35:08 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'sina.scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:35:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:35:08 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:35:08 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:35:08 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:35:08 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:35:08 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:35:08 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-23 22:35:08 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 120, in pop
+    url.decode('utf-8')
+builtins.UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+
+2017-11-23 22:35:13 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 120, in pop
+    url.decode('utf-8')
+builtins.UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+
+2017-11-23 22:35:18 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-23 22:35:18 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:35:18 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 35, 18, 440478),
+ 'log_count/CRITICAL': 2,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'start_time': datetime.datetime(2017, 11, 23, 14, 35, 8, 932393)}
+2017-11-23 22:35:18 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:35:18 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-23 22:35:37 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:35:37 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'sina.scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:35:37 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:35:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:35:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:35:38 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:35:38 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:35:38 [scrapy.core.engine] INFO: Spider opened
+2017-11-23 22:35:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-11-23 22:35:38 [twisted] CRITICAL: Unhandled Error
+Traceback (most recent call last):
+  File "C:\python3\lib\site-packages\scrapy\commands\crawl.py", line 58, in run
+    self.crawler_process.start()
+  File "C:\python3\lib\site-packages\scrapy\crawler.py", line 285, in start
+    reactor.run(installSignalHandlers=False)  # blocking call
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1243, in run
+    self.mainLoop()
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 1252, in mainLoop
+    self.runUntilCurrent()
+--- <exception caught here> ---
+  File "C:\python3\lib\site-packages\twisted\internet\base.py", line 878, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "C:\python3\lib\site-packages\scrapy\utils\reactor.py", line 41, in __call__
+    return self._func(*self._a, **self._kw)
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 122, in _next_request
+    if not self._next_request_from_scheduler(spider):
+  File "C:\python3\lib\site-packages\scrapy\core\engine.py", line 149, in _next_request_from_scheduler
+    request = slot.scheduler.next_request()
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\scheduler.py", line 86, in next_request
+    request = self.queue.pop(block_pop_timeout)
+  File "C:\Users\lxd02\Desktop\WeiboSpider\sina\scrapy_redis\queue.py", line 122, in pop
+    if "/follow" in url or "/fans" in url:
+builtins.TypeError: a bytes-like object is required, not 'str'
+
+2017-11-23 22:35:42 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2017-11-23 22:35:42 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2017-11-23 22:35:42 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2017, 11, 23, 14, 35, 42, 539145),
+ 'log_count/CRITICAL': 1,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'start_time': datetime.datetime(2017, 11, 23, 14, 35, 38, 523560)}
+2017-11-23 22:35:42 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2017-11-23 22:35:43 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-11-23 22:53:04 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-11-23 22:53:04 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'CONCURRENT_REQUESTS': 32, 'DOWNLOAD_DELAY': 1, 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'LOG_FILE': 'sina.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'sina.spiders', 'REDIRECT_ENABLED': False, 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'SPIDER_MODULES': ['sina.spiders']}
+2017-11-23 22:53:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-11-23 22:53:05 [sinaSpider] INFO: Reading start URLs from redis key 'weibo_spider:start_urls' (batch size: 32, encoding: utf-8
+2017-11-23 22:53:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'sina.middlewares.UserAgentMiddleware',
+ 'sina.middlewares.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-11-23 22:53:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-11-23 22:53:05 [py.warnings] WARNING: C:\Users\lxd02\Desktop\WeiboSpider\sina\pipelines.py:9: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2017-11-23 22:53:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.MongoDBPipeline', 'scrapy_redis.pipelines.RedisPipeline']
+2017-11-23 22:53:05 [scrapy.core.engine] INFO: Spider opened
