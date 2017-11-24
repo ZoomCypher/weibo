@@ -12,16 +12,7 @@ logger = logging.getLogger(__name__)
 
 WeiBoAccounts = [
 # {'username': xxxx, 'password': xxxx},
-{'username': '17131840749', 'password': 'nlytv9606'},
-{'username': '17124597183', 'password': 'vclth7311'},
-{'username': '17069467805', 'password': 'zrjlo7824'},
-{'username': '17124597271', 'password': 'btzdet3112'},
-{'username': '17124597185', 'password': 'irrbh6082'},
-{'username': '17124597097', 'password': 'obdzma8302'},
-{'username': '17131841043', 'password': 'uyvzk5716'},
-{'username': '17131840646', 'password': 'xwtrn8754'},
-{'username': '17131840964', 'password': 'qdpfv7804'},
-{'username': '17131840849', 'password': 'oldmjv1793'}
+
 ]
 
 
